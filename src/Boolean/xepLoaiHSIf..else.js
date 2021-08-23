@@ -2,7 +2,7 @@
 // Kiểm tra điểm xếp loại học sinh
 
 //V1
-function classifyStudent1(mark) {
+function classifyStudentV1(mark) {
   if (mark < 0 || mark > 10) return;
 
   let result;
@@ -16,8 +16,8 @@ function classifyStudent1(mark) {
 }
 
 //V2
-function classifyStudent2(mark) {
-  if (mark < 0 || mark > 10) return;
+function classifyStudentV2(mark) {
+  if (mark < 0 || mark > 10) return '';
 
   let result = 'Bad';
 
@@ -29,8 +29,8 @@ function classifyStudent2(mark) {
 }
 
 //V3
-function classifyStudent3(mark) {
-  if (mark < 0 || mark > 10) return;
+export function classifyStudentV3(mark) {
+  if (mark < 0 || mark > 10) return 'Invalid mark!';
 
   if (mark > 8) return 'Excellence';
   if (mark >= 7) return 'Good';
