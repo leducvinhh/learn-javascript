@@ -1,6 +1,6 @@
 // Viết hàm nhận vào 1 mã lỗi và in ra lỗi tương ứng
 
-function getErrorMessage1(errorCode) {
+export function getErrorMessage1(errorCode) {
   switch (errorCode) {
     case 'E01':
       return 'Invalid username or password';
@@ -13,7 +13,7 @@ function getErrorMessage1(errorCode) {
   }
 }
 
-function getErrorMessage2(errorCode) {
+export function getErrorMessage2(errorCode) {
   const errorMap = {
     E01: 'Invalid username or password',
     E02: 'Too many attempts',

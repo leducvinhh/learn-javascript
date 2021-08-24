@@ -1,30 +1,25 @@
-// Viết hàm kiểm tra số chẵn lẻ
+export function checkIfAllEvenV1(numberList) {
+  if (!Array.isArray(numberList) || numberList.length === 0) return false;
 
-function isEven(n) {
-  return n % 2 === 0;
+  let isValid = true;
+
+  for (let i = 0; i < numberList.length; i++) {
+    const number = numberList[i];
+    if (number % 2 !== 0) {
+      isValid = false;
+      break;
+    }
+  }
+
+  return isValid;
 }
 
-function isOld(n) {
-  return n % 2 !== 0;
-}
+export function checkIfAllEvenV2(numberList) {
+  if (!Array.isArray(numberList) || numberList.length === 0) return false;
 
-// Kiểm tra số chia hết cho 5 hay không
-function checkNumber2(n) {
-  return n % 5 === 0;
-}
+  for (let i = 0; i < numberList.length; i++) {
+    if (numberList[i] % 2 !== 0) return false;
+  }
 
-// Kiểm tra số chính phương
-function checkNumber3(n) {
-  if (n <= 0) return false;
-
-  const sqrtN = Math.sqrt(n);
-  const sqrtNInt = Math.trunc(sqrtN);
-
-  return sqrtNInt ** 2 === n;
-}
-
-function checkNumber4(n) {
-  if (n <= 0) return false;
-
-  return Number.isInteger(Math.sqrt(n));
+  return true;
 }

@@ -2,8 +2,8 @@
 // Kiểm tra điểm xếp loại học sinh
 
 //V1
-function classifyStudentV1(mark) {
-  if (mark < 0 || mark > 10) return;
+export function classifyStudentV1(mark) {
+  if (mark < 0 || mark > 10) return 'Invalid mark!';
 
   let result;
 
@@ -16,8 +16,8 @@ function classifyStudentV1(mark) {
 }
 
 //V2
-function classifyStudentV2(mark) {
-  if (mark < 0 || mark > 10) return '';
+export function classifyStudentV2(mark) {
+  if (mark < 0 || mark > 10) return 'Invalid mark!';
 
   let result = 'Bad';
 

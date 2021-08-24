@@ -1,5 +1,5 @@
 // Viết hàm trả về số tiền vé phải trả
-function getTicketPrice(age) {
+export function getTicketPrice(age) {
   if (age <= 0 || age > 125) return -1;
 
   if (age < 6 || age >= 70) return 0;
@@ -9,7 +9,7 @@ function getTicketPrice(age) {
 }
 
 // Viết hàm nói xin chào bằng nhiều thứ tiếng
-function sayHello(languageCode) {
+export function sayHello(languageCode) {
   const languageMap = {
     en: 'Hello',
     vi: 'Xin chào',
