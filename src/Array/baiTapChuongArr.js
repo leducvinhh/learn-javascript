@@ -8,7 +8,6 @@ function createArrayInRangeV1(a, b) {
 
   return newArray;
 }
-
 function createArrayInRangeV1(a, b) {
   if (a < -100 || a > 100 || b < -100 || b > 100 || a > b) return undefined;
 
