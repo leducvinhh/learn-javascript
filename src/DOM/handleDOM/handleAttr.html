@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 style="font-size: 20px;" id="heading">Đây là Heading</h1>
+        <p class="desc">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum dignissimos rem harum neque, voluptates quidem consequatur reprehenderit enim incidunt distinctio commodi sunt cumque, architecto quos error labore minima sequi cupiditate.
+        </p>
+    </div>
+
+    <script>
+        const pElement = document.querySelector('.desc')
+
+        // ẩn 1 phần tử bằng thuộc tính hidden hoặc viết trực tiếp vào thẻ mở
+        if(pElement) pElement.hidden = true
+
+        // Dùng element.dataset.nameDataset = '' để custom attribute
+        const h1El = document.getElementById('heading')
+
+        if(h1El) {
+            h1El.dataset.textDesc = 'desc' // --> textDesc lên DOM convert thành data-text-desc
+
+            // get value dataset vừa tạo
+            const test = h1El.dataset // get toàn bộ danh sách dataset
+            const test1 = h1El.dataset.textDesc // get 1 thuộc tính dataset
+            console.log("test: ", test1); //--> data-text-desc khi get convert thành textDesc
+        }
+
+        // kiểm tra attribute có hay không
+        //element.hasAttribute('name')
+
+        //=========================================================================================
+        //các hàm element.classList.toggle(class).add(class1, class2).remove(class1,class2).has().replace(old, new)
+
+        //=========================================================================================================
+        //dùng element.style.nameStyle để thay đổi style nhưng không nên làm vậy mà add class rồi style cho class bằng css
+
+        //========================================================================================================
+        //dùng hàm getComputedStyle(nameStyle) để lấy ra được thuộc tính css được chọn cuối cùng để render lên
+        const computedStyle = getComputedStyle(h1El)
+        console.log(computedStyle.fontSize)
+
+    </script>
+</body>
+</html>

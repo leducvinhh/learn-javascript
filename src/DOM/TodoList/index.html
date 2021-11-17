@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <form id="form-todo">
+            <h2 class="form-haeding">Add Todo</h2>
+            <div class="formGroup">
+                <input autocomplete="off" type="text" name="" id="todo-name" placeholder="enter todo name">
+            </div>
+            <div class="form-control">
+                <input class="btnSubmit" type="submit" value="Add Todo"> 
+            </div>
+        </form>
+
+        <ul id="todo-list"></ul>
+        <template id="todoTemplate">
+            <li>
+                <div class="todo">
+                    <p class="title"></p>
+                    <div class="btn-state">
+                        <button type="button" class="btn-success">
+                            Finish
+                        </button>
+                        <button type="button" class="btn-remove">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+            </li>
+        </template>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

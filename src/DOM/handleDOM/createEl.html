@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="todoList"></ul>
+    <ul id="todoList1"></ul>
+    
+    <script>
+        function createTodo(todo) {
+            const liElement = document.createElement('li')
+
+            liElement.textContent = todo.title
+            liElement.dataset.id = todo.id
+
+            return liElement
+        }
+
+
+
+        function render(todoList, elementId) {
+            if(!Array.isArray(todoList) || todoList.length === 0) return
+
+            const ulElement = document.getElementById(elementId)
+
+            if(ulElement) {
+                todoList.forEach(todo => {
+                    const li = createTodo(todo)
+
+                    ulElement.appendChild(li)
+                })
+            }
+        }
+
+        (() => {
+            const todoList = [
+                {id: 1, title: 'learn ReactJs'},
+                {id: 2, title: 'learn VueJs'},
+                {id: 3, title: 'learn AngularJs'},
+            ]
+            
+            render(todoList, 'todoList')
+
+            const todoList1 = [
+                {id: 1, title: 'learn ReactJs'},
+                {id: 2, title: 'learn VueJs'},
+                {id: 3, title: 'learn AngularJs'},
+                {id: 4, title: 'learn NextJs'},
+            ]
+            
+            render(todoList1, 'todoList1')
+        })()
+    </script>
+</body>
+</html>

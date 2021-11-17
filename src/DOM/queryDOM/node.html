@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <ul id="todoList">
+      <li class="todoItem">Code</li>
+      <li class="todoItem">Sleep</li>
+      <li class="todoItem">Eat</li>
+  </ul>
+
+
+    <script>
+        // element.parentElement nếu thằng cha không phải 1 element thì trả về null
+        const ulEl = document.getElementById('todoList')
+        if(ulEl) {
+            const todo = ulEl.querySelectorAll('.todoItem')
+            todo.forEach(e => console.log(e.textContent = 'hehe'))
+        }
+    </script>
+</body>
+</html>

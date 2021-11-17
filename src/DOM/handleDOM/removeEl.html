@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 id="heading">Hello world</h1>
+        <h2>hello Vin
+            <span>hahaha</span>
+            <span>hahaha</span>
+            <span>hahaha</span>
+            <span>hahaha</span>
+            <span>hahaha</span>
+        </h2>
+    </div>
+
+    <script>
+        //các cách remove 1 element
+        //1: element.remove() xóa chính nó
+        //2: element.textContent = '' khuyến khích dùng cách này
+        //3: element.innerHtml = '' không tối ưu
+        
+        //4: dùng vòng lặp while
+        const h2El = document.querySelector('h2')
+        if(h2El) {
+            while(h2El.lastElementChild) {
+                h2El.removeChild(h2El.lastElementChild)
+            }
+        }
+    </script>
+</body>
+</html>

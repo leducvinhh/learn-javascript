@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div onclick="console.log('div click')" class="main">
+        <button onclick="console.log('button click')">Click Me</button>
+    </div>
+
+    <script>
+        const button = document.querySelector('button')
+        button.addEventListener('click', function(e) {
+            // loại bỏ sự kiện nổi bọt
+            e.stopPropagation()
+
+            // loại bỏ sự kiện nổi bọt và tất cả các sự kiện phía sau nếu có (addEvent > 1 event)
+            e.stopImmediatePropagation()
+        })
+
+
+        button.addEventListener('click', function() {
+            // vì ở trên stopImmediatePropagation nên thằng này không được chạy
+            console.log('hello')
+        })
+    </script>
+</body>
+</html>
